@@ -82,7 +82,7 @@ function submitForm(city) {
         var windspdStorage = response.wind.speed + " MPH"
         console.log(response)
         icon = response.weather[0].icon;
-        icon_img = "http://openweathermap.org/img/w/" + icon + ".png";
+        icon_img = "https://openweathermap.org/img/w/" + icon + ".png";
         document.getElementById("iconDisplay").src = icon_img;
 
 
@@ -107,7 +107,7 @@ function submitForm(city) {
         console.log(response.coord.lat)
         var coordLat = response.coord.lat
         var coordLong = response.coord.lon
-        var uviUrl = "http://api.openweathermap.org/data/2.5/uvi?appid=" + api_key1 + "&lat=" +
+        var uviUrl = "https://api.openweathermap.org/data/2.5/uvi?appid=" + api_key1 + "&lat=" +
             coordLat +
             "&lon=" + coordLong;
         console.log(uviUrl)
@@ -183,11 +183,11 @@ function submitForm(city) {
         icon4 = response.list[24].weather[0].icon
         icon5 = response.list[32].weather[0].icon
 
-        icon1_img = "http://openweathermap.org/img/w/" + icon1 + ".png";
-        icon2_img = "http://openweathermap.org/img/w/" + icon2 + ".png";
-        icon3_img = "http://openweathermap.org/img/w/" + icon3 + ".png";
-        icon4_img = "http://openweathermap.org/img/w/" + icon4 + ".png";
-        icon5_img = "http://openweathermap.org/img/w/" + icon5 + ".png";
+        icon1_img = "https://openweathermap.org/img/w/" + icon1 + ".png";
+        icon2_img = "https://openweathermap.org/img/w/" + icon2 + ".png";
+        icon3_img = "https://openweathermap.org/img/w/" + icon3 + ".png";
+        icon4_img = "https://openweathermap.org/img/w/" + icon4 + ".png";
+        icon5_img = "https://openweathermap.org/img/w/" + icon5 + ".png";
 
         hu1 = $("#humid1").text("humidity: " + response.list[0].main.humidity + "%")
         hu2 = $("#humid2").text("humidity: " + response.list[8].main.humidity + "%")
