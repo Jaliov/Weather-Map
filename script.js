@@ -2,11 +2,11 @@
 
 function submitForm(city) {
 
-    var api = 'http://api.openweathermap.org/data/2.5/weather?q='
+    var api = 'https://api.openweathermap.org/data/2.5/weather?q='
     var api_key = '&appid=585cb6280f44e153d597d105c67d1278&units=imperial';
     var api_key1 = '585cb6280f44e153d597d105c67d1278';
-    var api_forecast = 'http://api.openweathermap.org/data/2.5/forecast?q=';
-    var api_uvi = 'http://api.openweathermap.org/data/2.5/uvi?'
+    var api_forecast = 'https://api.openweathermap.org/data/2.5/forecast?q=';
+    var api_uvi = 'https://api.openweathermap.org/data/2.5/uvi?'
     var api_lat = 'lat='
     var api_lon = '&lon='
 
