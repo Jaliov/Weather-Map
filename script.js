@@ -120,7 +120,7 @@
              var btnDsply = document.getElementById("UVIndexBtn").textContent;
 
              if (btnDsply < 5) {
-                 UVIndexBtn.style.backgroundColor = "yellow"; //make switch statement
+                 UVIndexBtn.style.backgroundColor = "yellow"; 
                  UVIndexBtn.style.borderColor = "yellow";
                  UVIndexBtn.style.color = "black"
              } else if (btnDsply > 5 && btnDsply < 7) {
