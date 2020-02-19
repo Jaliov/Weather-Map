@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet " href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js">
+    <title>Weather Map</title>
+</head>
+
+<body>
+    <script src="script.js"></script>
+    <div class="container">
+        <div class="row">
+            <div class="bg-dark col col-lg-12" style="height:100px;padding-top: 20px">
+                <h1 style="color:white;text-align: center;">Weather Dashboard</h1>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="jumbotron col col-lg-4">
+                <h3>Search for a City</h3>
+
+                <input id="searchCity" type="text" placeholder="Search" class="city">
+                <button class="btn btn-primary fa fa-search" id="Searchbtn"></button>
+
+                <table class="table">
+
+                    <tbody class="form-control form-control-lg" type="text" placeholder=".form-control-lg">
+                    </tbody>
+                </table>
+
+                <tbody class="form-control form-control-lg" type="text" placeholder=".form-control-lg">
+                </tbody>
+                </table>
+
+            </div>
+            <div class="col-lg-8" id="wrapper">
+                <table>
+                    <tr id="repeatTemp"></tr>
+                    <tr id="forecast"></tr>
+                    <div style="height: 400px;">
+                        <h2 id="displayWeather"></h2>
+                        <!--<span>&#8457;--></span><img id="iconDisplay" alt="">
+                        <h4 id="temperature"></h4>
+                        <h4 id="humid"></h4>
+                        <h4 id="windspeed"></h4>
+
+                        <h4 id="UVIndex"> </h4>
+
+                        <br />
+
+                    </div>
+                    <h3>5 Day Forecast</h3>
+
+                    <div type="text" class="btn btn-primary btn-lg"
+                        style="width: 125px; height:170px; padding-left :10px; margin-right:20px">
+                        <div id="dateDisplay1"></div>
+                        <p id="temp1"></p>
+                        <img id="iconDisplay1"></img>
+                        <p id="field1"></p>
+                        <p id="humid1"></p>
+                    </div>
+
+                    <div type="text" class="btn btn-primary btn-lg"
+                        style="width: 125px; height:170px; margin-right: 20px;">
+                        <div id="dateDisplay2"></div>
+                        <p id="temp2"></p>
+                        <img id="iconDisplay2"></img>
+                        <p id="field2"></p>
+                        <p id="humid2"></p>
+                    </div>
+
+                    <div type="text" class="btn btn-primary btn-lg"
+                        style="width: 125px; height:170px; margin-right: 20px;">
+                        <div id="dateDisplay3"></div>
+                        <p id="temp3"></p>
+                        <img id="iconDisplay3"></img>
+                        <p id="field3"></p>
+                        <p id="humid3"></p>
+                    </div>
+
+                    <div type="text" class="btn btn-primary btn-lg"
+                        style="width: 130px; height:170px; margin-right: 20px;">
+                        <div id="dateDisplay4"></div>
+                        <p id="temp4"></p>
+                        <img id="iconDisplay4"></img>
+                        <p id="field4"></p>
+                        <p id="humid4"></p>
+                    </div>
+
+                    <div type="text" class="btn btn-primary btn-lg"
+                        style="width: 125px; height:170px; margin-right: 0px;">
+                        <div id="dateDisplay5"></div>
+                        <p id="temp5"></p>
+                        <img id="iconDisplay5"></img>
+                        <p id="field5"></p>
+                        <p id="humid5"></p>
+                    </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        var search = document.querySelector("#Searchbtn")
+        search.addEventListener("click", submitForm)
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</body>
+
+</html>

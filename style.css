@@ -1,0 +1,50 @@
+
+h1 {
+text-align: center; 
+color: white;
+}
+
+/*
+{ 
+ 
+  font-size: 75%;
+}*/
+
+#field1, #field2, #field3, #field4, #field5, #humid1, #humid2, #humid3, #humid4, #humid5{
+
+font-size: 75%;
+text-align: center;
+
+}
+
+tr {
+
+ background-color: white;
+ 
+}
+
+tr { 
+ background-color: rgb(240, 255, 254)
+}
+
+
+  
+ /* .topnav input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+  }
+  
+  .topnav .search-container button {
+    float: right;
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+  }
+  */
+  
