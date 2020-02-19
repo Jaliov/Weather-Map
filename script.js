@@ -50,7 +50,12 @@ function submitForm(city) {
     var nextDayTime5 = moment(currentTime, "MM-DD-YYYY").add(5, 'days').format("MM-DD-YYYY")
 
     console.log("Tomorrow date " + nextDayTime1)
-
+    
+   
+    // cityChoice.addEventListener('click', function cityRld(city) {
+    //     city = cityChoice.textContent;
+    //     submitForm(city);
+    // })
 
     $.ajax({
             url: api + city + api_key,
@@ -114,7 +119,7 @@ function submitForm(city) {
             //console.log(response.value)
 
             document.querySelector("#UVIndex").innerHTML =
-                " UVIndex: <span> <button type='button' class='btn btn-danger' id ='UVIndexBtn'>" +
+                "UVIndex: <span> <button type='button' class='btn btn-danger' id ='UVIndexBtn'>" +
                 UVIndex + "</button></span>";
             var UVIindex = $("#UVIndexBtn").text(response.value)
 
