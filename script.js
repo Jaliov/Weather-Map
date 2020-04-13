@@ -1,4 +1,14 @@
+var cities = ["London"];
+var cValue
+var cityRld
 
+$(document).on("click", ".cityValue", renderInfo)
+
+function renderInfo() {
+    //event.preventDefault();
+    var cityButtonClicked = cityRld$(this).attr("button", cityRld);
+    submitForm(cityButtonClicked);
+}
 
 function submitForm(city) {
 
@@ -32,6 +42,10 @@ function submitForm(city) {
 
     var tempStorage;
     var forecastStorage1;
+    var humidStorage
+    var windspd
+    var windspdStorage
+
 
     var tempStorageArr = [];
 
@@ -39,8 +53,14 @@ function submitForm(city) {
     var tRow;
     var tBody;
     var reSubmit;
+    var tempNum
+    var temper
+    var weatherTd
+    var tTitle
+    var coordLat
+    var coordLong
 
-    var city = document.getElementById("searchCity").value;
+    city = document.getElementById("searchCity").value;
 
     var currentTime = moment().format('MM-DD-YYYY')
     var nextDayTime1 = moment(currentTime, "MM-DD-YYYY").add(1, 'days').format("MM-DD-YYYY")
@@ -50,12 +70,9 @@ function submitForm(city) {
     var nextDayTime5 = moment(currentTime, "MM-DD-YYYY").add(5, 'days').format("MM-DD-YYYY")
 
     console.log("Tomorrow date " + nextDayTime1)
-    
-   
-    // cityChoice.addEventListener('click', function cityRld(city) {
-    //     city = cityChoice.textContent;
-    //     submitForm(city);
-    // })
+
+    console.log(city)
+
 
     $.ajax({
             url: api + city + api_key,
@@ -64,49 +81,62 @@ function submitForm(city) {
 
     ).then(function (response) {
         tBody = $("tbody");
-        tRow = $("<button id = 'content' class = btn btn-light btn-lg>");
+        tRow = $("<button id = 'content' class = 'btn btn-light btn-lg cityValue' value = 'content'>");
 
-        var tTitle = $("<h3>")
-        var weatherTd = $("#displayWeather").text(city + " (" + currentTime + ")");
-        var temper = $("#temperature").text("Temperature: " + response.main.temp + "℉");
-        var tempNum = $("#onlyTemp").text(response.main.temp + "℉")
+
+        tTitle = $("<h3>")
+        weatherTd = $("#displayWeather").text(city + " (" + currentTime + ")");
+        temper = $("#temperature").text("Temperature: " + response.main.temp + "℉");
+        tempNum = $("#onlyTemp").text(response.main.temp + "℉")
         var tempStorage = response.main.temp + "℉";
         let forecastStorage1 //= response.list[0].main.temp + "℉";
         //tempStorageArr.push(tempStorage)
-        console.log(tempStorageArr)
 
         console.log("tempStorage : " + tempStorage)
         humid = $("#humid").text("Humidity: " + response.main.humidity + "%");
-        var humidStorage = response.main.humidity + "%"
-        var windspd = $("#windspeed").text("Wind Speed: " + response.wind.speed + " MPH");
-        var windspdStorage = response.wind.speed + " MPH"
+        humidStorage = response.main.humidity + "%"
+        windspd = $("#windspeed").text("Wind Speed: " + response.wind.speed + " MPH");
+        windspdStorage = response.wind.speed + " MPH"
         console.log(response)
         icon = response.weather[0].icon;
         icon_img = "https://openweathermap.org/img/w/" + icon + ".png";
         document.getElementById("iconDisplay").src = icon_img;
 
-
         tRow.append(city)
         tBody.append(tRow)
+
+        cityRld = document.querySelector(".cityValue").textContent
+        console.log("cityRld " + cityRld)
+
+        cities.push(cityRld);
+
+
+        console.log(cities)
+
+
 
 
         // //Store city and current temperature
         if (typeof (Storage) !== "undefined") {
+            localStorage.setItem("cityArr", cities)
             localStorage.setItem("city", city);
-            localStorage.setItem("currenttemp", tempStorage);
-            localStorage.setItem("humidity", humidStorage)
-            localStorage.setItem("windspd", windspdStorage)
+            // localStorage.setItem("currenttemp", tempStorage);
+            // localStorage.setItem("humidity", humidStorage)
+            // localStorage.setItem("windspd", windspdStorage)
 
             console.log("This is city : " + city)
-           
+
         } else {
             document.getElementById("temperature").innerHTML =
                 "Sorry, your browser does not support Web Storage...";
         }
 
-        console.log(response.coord.lat)
-        var coordLat = response.coord.lat
-        var coordLong = response.coord.lon
+        cValue = localStorage.getItem("cityArr");
+        console.log("cValue " + cValue)
+
+        //console.log(response.coord.lat)
+        coordLat = response.coord.lat
+        coordLong = response.coord.lon
         var uviUrl = "https://api.openweathermap.org/data/2.5/uvi?appid=" + api_key1 + "&lat=" +
             coordLat +
             "&lon=" + coordLong;
@@ -140,86 +170,88 @@ function submitForm(city) {
             console.log("btnDsply " + btnDsply);
 
         });
-    });
 
 
-    //Forecast
-    $.ajax({
-        url: api_forecast + city + api_key,
-        method: "GET"
-    }).then(function (response) {
-        console.log(response)
+        //Forecast
+        $.ajax({
+            url: api_forecast + city + api_key,
+            method: "GET"
+        }).then(function (response) {
+            console.log(response)
 
-        forecastStorage1 = response.list[0].main.temp + "℉";
-        forecastStorage2 = response.list[8].main.temp + "℉";
-        forecastStorage3 = response.list[16].main.temp + "℉";
-        forecastStorage4 = response.list[24].main.temp + "℉";
-        forecastStorage5 = response.list[32].main.temp + "℉";
+            forecastStorage1 = response.list[0].main.temp + "℉";
+            forecastStorage2 = response.list[8].main.temp + "℉";
+            forecastStorage3 = response.list[16].main.temp + "℉";
+            forecastStorage4 = response.list[24].main.temp + "℉";
+            forecastStorage5 = response.list[32].main.temp + "℉";
 
-        $("#field1").text("temp: " + forecastStorage1)
-        $("#field2").text("temp: " + forecastStorage2)
-        $("#field3").text("temp: " + forecastStorage3)
-        $("#field4").text("temp: " + forecastStorage4)
-        $("#field5").text("temp: " + forecastStorage5)
-
-
-
-        if (typeof (Storage) !== "undefined") {
-            localStorage.setItem("forecast1", `${city} ${nextDayTime1} ${forecastStorage1}`);
-            localStorage.setItem("forecast2", `${city} ${nextDayTime2} ${forecastStorage2}`);
-            localStorage.setItem("forecast3", `${city} ${nextDayTime3} ${forecastStorage3}`);
-            localStorage.setItem("forecast4", `${city} ${nextDayTime4} ${forecastStorage4}`);
-            localStorage.setItem("forecast5", `${city} ${nextDayTime5} ${forecastStorage5}`);
-
-            console.log("This is forecastStorage1 : " + forecastStorage1)
-        } else {
-            document.getElementById("temperature").innerHTML =
-                "Sorry, your browser does not support Web Storage...";
-        }
-
-        icon1 = response.list[0].weather[0].icon
-        icon2 = response.list[8].weather[0].icon
-        icon3 = response.list[16].weather[0].icon
-        icon4 = response.list[24].weather[0].icon
-        icon5 = response.list[32].weather[0].icon
-
-        icon1_img = "https://openweathermap.org/img/w/" + icon1 + ".png";
-        icon2_img = "https://openweathermap.org/img/w/" + icon2 + ".png";
-        icon3_img = "https://openweathermap.org/img/w/" + icon3 + ".png";
-        icon4_img = "https://openweathermap.org/img/w/" + icon4 + ".png";
-        icon5_img = "https://openweathermap.org/img/w/" + icon5 + ".png";
-
-        hu1 = $("#humid1").text("humidity: " + response.list[0].main.humidity + "%")
-        hu2 = $("#humid2").text("humidity: " + response.list[8].main.humidity + "%")
-        hu3 = $("#humid3").text("humidity: " + response.list[16].main.humidity + "%")
-        hu4 = $("#humid4").text("humidity: " + response.list[24].main.humidity + "%")
-        hu5 = $("#humid5").text("humidity: " + response.list[32].main.humidity + "%")
+            $("#field1").text("temp: " + forecastStorage1)
+            $("#field2").text("temp: " + forecastStorage2)
+            $("#field3").text("temp: " + forecastStorage3)
+            $("#field4").text("temp: " + forecastStorage4)
+            $("#field5").text("temp: " + forecastStorage5)
 
 
-        document.getElementById("iconDisplay1").src = icon1_img;
-        document.getElementById("iconDisplay2").src = icon2_img;
-        document.getElementById("iconDisplay3").src = icon3_img;
-        document.getElementById("iconDisplay4").src = icon4_img;
-        document.getElementById("iconDisplay5").src = icon5_img;
+
+            // if (typeof (Storage) !== "undefined") {
+
+            //     localStorage.setItem("forecast1", `${city} ${nextDayTime1} ${forecastStorage1}`);
+            //     localStorage.setItem("forecast2", `${city} ${nextDayTime2} ${forecastStorage2}`);
+            //     localStorage.setItem("forecast3", `${city} ${nextDayTime3} ${forecastStorage3}`);
+            //     localStorage.setItem("forecast4", `${city} ${nextDayTime4} ${forecastStorage4}`);
+            //     localStorage.setItem("forecast5", `${city} ${nextDayTime5} ${forecastStorage5}`);
+
+            //     console.log("This is forecastStorage1 : " + forecastStorage1)
+            // } else {
+            //     document.getElementById("temperature").innerHTML =
+            //         "Sorry, your browser does not support Web Storage...";
+            // }
+
+            icon1 = response.list[0].weather[0].icon
+            icon2 = response.list[8].weather[0].icon
+            icon3 = response.list[16].weather[0].icon
+            icon4 = response.list[24].weather[0].icon
+            icon5 = response.list[32].weather[0].icon
+
+            icon1_img = "https://openweathermap.org/img/w/" + icon1 + ".png";
+            icon2_img = "https://openweathermap.org/img/w/" + icon2 + ".png";
+            icon3_img = "https://openweathermap.org/img/w/" + icon3 + ".png";
+            icon4_img = "https://openweathermap.org/img/w/" + icon4 + ".png";
+            icon5_img = "https://openweathermap.org/img/w/" + icon5 + ".png";
+
+            hu1 = $("#humid1").text("humidity: " + response.list[0].main.humidity + "%")
+            hu2 = $("#humid2").text("humidity: " + response.list[8].main.humidity + "%")
+            hu3 = $("#humid3").text("humidity: " + response.list[16].main.humidity + "%")
+            hu4 = $("#humid4").text("humidity: " + response.list[24].main.humidity + "%")
+            hu5 = $("#humid5").text("humidity: " + response.list[32].main.humidity + "%")
 
 
+            document.getElementById("iconDisplay1").src = icon1_img;
+            document.getElementById("iconDisplay2").src = icon2_img;
+            document.getElementById("iconDisplay3").src = icon3_img;
+            document.getElementById("iconDisplay4").src = icon4_img;
+            document.getElementById("iconDisplay5").src = icon5_img;
+
+
+
+
+            //Five Day Forecast
+            //Day 1
+            document.getElementById("dateDisplay1").innerHTML = nextDayTime1
+            //document.getElementById("humid1").innerHTML = hu1;
+
+            //Day 2
+            document.getElementById("dateDisplay2").innerHTML = nextDayTime2
+            //document.getElementById("iconDisplay2").innerHTML = icon2;
+
+            //Day 3
+            document.getElementById("dateDisplay3").innerHTML = nextDayTime3
+
+            //Day 4
+            document.getElementById("dateDisplay4").innerHTML = nextDayTime4
+
+            //Day 5
+            document.getElementById("dateDisplay5").innerHTML = nextDayTime5
+        })
     })
-
-    //Five Day Forecast
-    //Day 1
-    document.getElementById("dateDisplay1").innerHTML = nextDayTime1
-    //document.getElementById("humid1").innerHTML = hu1;
-
-    //Day 2
-    document.getElementById("dateDisplay2").innerHTML = nextDayTime2
-    //document.getElementById("iconDisplay2").innerHTML = icon2;
-
-    //Day 3
-    document.getElementById("dateDisplay3").innerHTML = nextDayTime3
-
-    //Day 4
-    document.getElementById("dateDisplay4").innerHTML = nextDayTime4
-
-    //Day 5
-    document.getElementById("dateDisplay5").innerHTML = nextDayTime5
 }

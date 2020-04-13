@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet " href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!--<link href="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js">-->
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+
      <script src="script.js"></script>
-    <title>Weather Map</title>
+     <title>Weather Map</title>
 </head>
 
 <body>
@@ -32,12 +34,8 @@
 
                 <table class="table">
 
-                    <tbody class="form-control form-control-lg" type="text" placeholder=".form-control-lg">
-                    </tbody>
-                </table>
-
-                <tbody class="form-control form-control-lg" type="text" placeholder=".form-control-lg">
-                </tbody>
+                    <tbody></tbody> 
+                    
                 </table>
 
             </div>
@@ -51,9 +49,7 @@
                         <h4 id="temperature"></h4>
                         <h4 id="humid"></h4>
                         <h4 id="windspeed"></h4>
-
                         <h4 id="UVIndex"> </h4>
-
                         <br />
 
                     </div>
@@ -69,7 +65,7 @@
                     </div>
 
                     <div type="text" class="btn btn-primary btn-lg"
-                        style="width: 125px; height:170px; margin-right: 20px;">
+                        style="width: 125px; height:170px; padding-left :10px; margin-right: 20px;">
                         <div id="dateDisplay2"></div>
                         <p id="temp2"></p>
                         <img id="iconDisplay2"></img>
@@ -78,7 +74,7 @@
                     </div>
 
                     <div type="text" class="btn btn-primary btn-lg"
-                        style="width: 125px; height:170px; margin-right: 20px;">
+                        style="width: 125px; height:170px;  padding-left :10px; margin-right: 20px;">
                         <div id="dateDisplay3"></div>
                         <p id="temp3"></p>
                         <img id="iconDisplay3"></img>
@@ -87,7 +83,7 @@
                     </div>
 
                     <div type="text" class="btn btn-primary btn-lg"
-                        style="width: 130px; height:170px; margin-right: 20px;">
+                        style="width: 130px; height:170px;  padding-left :10px; margin-right: 20px;">
                         <div id="dateDisplay4"></div>
                         <p id="temp4"></p>
                         <img id="iconDisplay4"></img>
@@ -96,7 +92,7 @@
                     </div>
 
                     <div type="text" class="btn btn-primary btn-lg"
-                        style="width: 125px; height:170px; margin-right: 0px;">
+                        style="width: 125px; height:170px;  padding-left :10px; margin-right: 0px;">
                         <div id="dateDisplay5"></div>
                         <p id="temp5"></p>
                         <img id="iconDisplay5"></img>
@@ -106,7 +102,7 @@
 
             </div>
         </div>
-    </div>
+       </div>
     </div>
 
    <script>
@@ -114,15 +110,11 @@
         searchFor.addEventListener("click", submitForm)
     </script>
    
-    <script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">
+   
+      
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">
-    </script>
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
-
+  
 </body>
 
 </html>
