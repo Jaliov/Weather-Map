@@ -4,11 +4,10 @@ text-align: center;
 color: white;
 }
 
-/*
-{ 
- 
-  font-size: 75%;
-}*/
+.container {
+  background-image: url('IMAG0064_light.jpg');
+  padding-bottom: 10px;
+}
 
 #field1, #field2, #field3, #field4, #field5, #humid1, #humid2, #humid3, #humid4, #humid5{
 
@@ -27,24 +26,11 @@ tr {
  background-color: rgb(240, 255, 254)
 }
 
+.forecastCont {
+  margin-bottom: 30px;
+ 
+}
 
-  
- /* .topnav input[type=text] {
-    padding: 6px;
-    margin-top: 8px;
-    font-size: 17px;
-    border: none;
-  }
-  
-  .topnav .search-container button {
-    float: right;
-    padding: 6px 10px;
-    margin-top: 8px;
-    margin-right: 16px;
-    background: #ddd;
-    font-size: 17px;
-    border: none;
-    cursor: pointer;
-  }
-  */
+
+ 
   

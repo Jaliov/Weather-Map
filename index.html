@@ -17,17 +17,17 @@
 
 <body>
    
-    <div class="container">
+    <div class="container text-dark">
         <div class="row">
             <div class="bg-dark col col-lg-12" style="height:100px;padding-top: 20px">
-                <h1 style="color:white;text-align: center;">Weather Dashboard</h1>
+                <h1 class = "text-center text-light">Weather Dashboard</h1>
             </div>
         </div>
 
         <div class="row">
 
             <div class="jumbotron col col-lg-4">
-                <h3>Search for a City</h3>
+                <h3 class = "text-dark">Search for a City</h3>
 
                 <input id="searchCity" type="text" placeholder="Search" class="city">
                 <button class="btn btn-primary fa fa-search" id="Searchbtn"></button>
@@ -41,9 +41,9 @@
             </div>
             <div class="col-lg-8" id="wrapper">
                 <table>
-                    <tr id="repeatTemp"></tr>
-                    <tr id="forecast"></tr>
-                    <div style="height: 400px;">
+                    <!--<tr id="repeatTemp"></tr>
+                    <tr id="forecast"></tr>-->
+                    <div style="height: 400px; padding-left: 20px;">
                         <h2 id="displayWeather"></h2>
                         <!--<span>&#8457;--></span><img id="iconDisplay" alt="">
                         <h4 id="temperature"></h4>
@@ -54,7 +54,7 @@
 
                     </div>
                     <h3>5 Day Forecast</h3>
-
+                    <div class="forecastCont">
                     <div type="text" class="btn btn-primary btn-lg"
                         style="width: 125px; height:170px; padding-left :10px; margin-right:20px">
                         <div id="dateDisplay1"></div>
@@ -63,7 +63,7 @@
                         <p id="field1"></p>
                         <p id="humid1"></p>
                     </div>
-
+                 
                     <div type="text" class="btn btn-primary btn-lg"
                         style="width: 125px; height:170px; padding-left :10px; margin-right: 20px;">
                         <div id="dateDisplay2"></div>
@@ -99,19 +99,17 @@
                         <p id="field5"></p>
                         <p id="humid5"></p>
                     </div>
-
+                </div>
             </div>
         </div>
        </div>
     </div>
 
-   <script>
+  <script>
         var searchFor = document.querySelector("#Searchbtn")
         searchFor.addEventListener("click", submitForm)
     </script>
    
-   
-      
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   
