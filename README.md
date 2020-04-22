@@ -1,6 +1,6 @@
 # Weather-Map
 
-## A convenient Ajax call Weather API that displays the current weather in cities throughout the world as well as a 5 day forecast
+## A convenient Weather API that displays the current weather in cities throughout the world as well as a 5 day forecast
 
 ![](Weather-MapScreenshot.jpg)
 
@@ -12,7 +12,7 @@
 - Bootstrap
 - Ajax
 
-#Deployment
-## 
+## See it here: 
+### https://jaliov.github.io/Weather-Map/
 
 
