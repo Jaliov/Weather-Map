@@ -12,7 +12,7 @@
 - Bootstrap
 - Ajax
 
-## See it here: 
+## Deployment: 
 ### https://jaliov.github.io/Weather-Map/
 
 
