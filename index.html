@@ -28,13 +28,13 @@
 
             <div class="jumbotron col col-lg-4">
                 <h3 class = "text-dark">Search for a City</h3>
-
+                 
                 <input id="searchCity" type="text" placeholder="Search" class="city">
                 <button class="btn btn-primary fa fa-search" id="Searchbtn"></button>
-
+         
                 <table class="table">
 
-                    <tbody></tbody> 
+                    <tbody id = "showIt"></tbody> 
                     
                 </table>
 
@@ -106,8 +106,12 @@
     </div>
 
   <script>
+
         var searchFor = document.querySelector("#Searchbtn")
         searchFor.addEventListener("click", submitForm)
+        
+      
+      
     </script>
    
     </script>

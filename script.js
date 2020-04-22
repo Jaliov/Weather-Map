@@ -1,17 +1,11 @@
 var cities = ["London"];
 var cValue
-var cityRld
 
-$(document).on("click", ".cityValue", renderInfo)
-
-function renderInfo() {
-    //event.preventDefault();
-    var cityButtonClicked = cityRld$(this).attr("button", cityRld);
-    submitForm(cityButtonClicked);
-}
 
 function submitForm(city) {
+  city === "";
 
+    
     var api = 'https://api.openweathermap.org/data/2.5/weather?q='
     var api_key = '&appid=585cb6280f44e153d597d105c67d1278&units=imperial';
     var api_key1 = '585cb6280f44e153d597d105c67d1278';
@@ -48,7 +42,7 @@ function submitForm(city) {
 
 
     var tempStorageArr = [];
-
+    var city;
     var humid;
     var tRow;
     var tBody;
@@ -61,6 +55,11 @@ function submitForm(city) {
     var coordLong
 
     city = document.getElementById("searchCity").value;
+   
+    cities.push(city);
+    console.log(cities)
+    console.log("index " + cities.indexOf(city))
+
 
     var currentTime = moment().format('MM-DD-YYYY')
     var nextDayTime1 = moment(currentTime, "MM-DD-YYYY").add(1, 'days').format("MM-DD-YYYY")
@@ -71,8 +70,7 @@ function submitForm(city) {
 
     console.log("Tomorrow date " + nextDayTime1)
 
-    console.log(city)
-
+    
 
     $.ajax({
             url: api + city + api_key,
@@ -81,8 +79,27 @@ function submitForm(city) {
 
     ).then(function (response) {
         tBody = $("tbody");
-        tRow = $("<button id = 'content' class = 'btn btn-light btn-lg cityValue' value = 'content'>");
-
+        tRow = $("<div id = 'btnContent' class = 'btn btn-light btn-lg cityValue' label id = 'content'>");
+        var btnResult = [" "];
+         var cityRld = document.querySelector('.city').value
+    //     alert(cityRld)
+    //    btnResult.push(cityRld)
+    //    console.log(btnResult)
+    //     for(var i = 0; i < cities.length; i++ ) 
+    //         {
+    //             event.preventDefault();
+    //             alert("You chose : " + cityRld)
+    //         }
+    //         for(var x = 0; x < btnResult.length; x++ ) {
+                  
+    //                 if(cities[i] === btnResult[x]) {
+    //                     alert("You got a match!")
+    //                 }
+            
+        //     $(".cityValue").click(function(){
+        //        submitForm(cityRld)
+        //       });
+        // }
 
         tTitle = $("<h3>")
         weatherTd = $("#displayWeather").text(city + " (" + currentTime + ")");
@@ -105,16 +122,18 @@ function submitForm(city) {
         tRow.append(city)
         tBody.append(tRow)
 
-        cityRld = document.querySelector(".cityValue").textContent
-        console.log("cityRld " + cityRld)
+        // cityRld = document.querySelector(".city").value
+        // console.log("cityRld " + cityRld)
 
-        cities.push(cityRld);
+        
+      
 
-
-        console.log(cities)
-
-
-
+        // console.log([...new Set(cities)])
+        //  for(var i=0; i < cities.length; i++ ) {
+        //   if (cities[i] == cityRld) {
+        //       console.log("Result " + cities[i])
+        //   }
+        //  }
 
         // //Store city and current temperature
         if (typeof (Storage) !== "undefined") {
@@ -192,21 +211,6 @@ function submitForm(city) {
             $("#field5").text("temp: " + forecastStorage5)
 
 
-
-            // if (typeof (Storage) !== "undefined") {
-
-            //     localStorage.setItem("forecast1", `${city} ${nextDayTime1} ${forecastStorage1}`);
-            //     localStorage.setItem("forecast2", `${city} ${nextDayTime2} ${forecastStorage2}`);
-            //     localStorage.setItem("forecast3", `${city} ${nextDayTime3} ${forecastStorage3}`);
-            //     localStorage.setItem("forecast4", `${city} ${nextDayTime4} ${forecastStorage4}`);
-            //     localStorage.setItem("forecast5", `${city} ${nextDayTime5} ${forecastStorage5}`);
-
-            //     console.log("This is forecastStorage1 : " + forecastStorage1)
-            // } else {
-            //     document.getElementById("temperature").innerHTML =
-            //         "Sorry, your browser does not support Web Storage...";
-            // }
-
             icon1 = response.list[0].weather[0].icon
             icon2 = response.list[8].weather[0].icon
             icon3 = response.list[16].weather[0].icon
@@ -253,5 +257,28 @@ function submitForm(city) {
             //Day 5
             document.getElementById("dateDisplay5").innerHTML = nextDayTime5
         })
+
+       
+        // function checkCity(cityLabel) {
+        //     return cityLabel === cityReload
+        // }
+
+        // cities.filter(checkCity)
+        
+        // var cityReload = document.querySelector("#content");
+        // cityReload.addEventListener('click', submitForm)
+        
+
+
     })
 }
+   
+   
+
+  
+
+   
+    
+
+
+
