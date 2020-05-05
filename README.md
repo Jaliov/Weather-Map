@@ -4,15 +4,15 @@
 
 ![](Weather-MapScreenshot.jpg)
 
-```
-# Technologies used:
+
+## Technologies used:
 - HTML
 - CSS 
 - JavaScript
 - jQuery
 - Bootstrap
 - API
-```
+
 ## Deployment: 
 ### https://jaliov.github.io/Weather-Map/
 
