@@ -5,37 +5,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Coustard&family=Slabo+13px&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet " href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 
 
-     <script src="script.js"></script>
-     <title>Weather Map</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+
+    <script src="script.js"></script>
+
+    <title>Weather Map</title>
+
 </head>
 
 <body>
-   
+
     <div class="container text-dark">
         <div class="row">
             <div class="bg-dark col col-lg-12" style="height:100px;padding-top: 20px">
-                <h1 class = "text-center text-light">Weather Dashboard</h1>
+                <h1 class="text-center text-light" style="font-family: 'Coustard', serif;">Weather
+                    Dashboard</h1>
             </div>
         </div>
 
         <div class="row">
 
             <div class="jumbotron col col-lg-4">
-                <h3 class = "text-dark">Search for a City</h3>
-                 
+                <h4 class="text-dark">Search for a City</h4>
+
                 <input id="searchCity" type="text" placeholder="Search" class="city">
                 <button class="btn btn-primary fa fa-search" id="Searchbtn"></button>
-         
+
                 <table class="table">
 
-                    <tbody id = "showIt"></tbody> 
-                    
+                    <tbody id="showIt"></tbody>
+
                 </table>
 
             </div>
@@ -55,66 +63,64 @@
                     </div>
                     <h3>5 Day Forecast</h3>
                     <div class="forecastCont">
-                    <div type="text" class="btn btn-primary btn-lg"
-                        style="width: 125px; height:170px; padding-left :10px; margin-right:20px">
-                        <div id="dateDisplay1"></div>
-                        <p id="temp1"></p>
-                        <img id="iconDisplay1"></img>
-                        <p id="field1"></p>
-                        <p id="humid1"></p>
-                    </div>
-                 
-                    <div type="text" class="btn btn-primary btn-lg"
-                        style="width: 125px; height:170px; padding-left :10px; margin-right: 20px;">
-                        <div id="dateDisplay2"></div>
-                        <p id="temp2"></p>
-                        <img id="iconDisplay2"></img>
-                        <p id="field2"></p>
-                        <p id="humid2"></p>
-                    </div>
+                        <div type="text" class="btn btn-primary btn-lg"
+                            style="width: 125px; height:170px; padding-left :10px; margin-right:20px">
+                            <div id="dateDisplay1"></div>
+                            <p id="temp1"></p>
+                            <img id="iconDisplay1"></img>
+                            <p id="field1"></p>
+                            <p id="humid1"></p>
+                        </div>
 
-                    <div type="text" class="btn btn-primary btn-lg"
-                        style="width: 125px; height:170px;  padding-left :10px; margin-right: 20px;">
-                        <div id="dateDisplay3"></div>
-                        <p id="temp3"></p>
-                        <img id="iconDisplay3"></img>
-                        <p id="field3"></p>
-                        <p id="humid3"></p>
-                    </div>
+                        <div type="text" class="btn btn-primary btn-lg"
+                            style="width: 125px; height:170px; padding-left :10px; margin-right: 20px;">
+                            <div id="dateDisplay2"></div>
+                            <p id="temp2"></p>
+                            <img id="iconDisplay2"></img>
+                            <p id="field2"></p>
+                            <p id="humid2"></p>
+                        </div>
 
-                    <div type="text" class="btn btn-primary btn-lg"
-                        style="width: 130px; height:170px;  padding-left :10px; margin-right: 20px;">
-                        <div id="dateDisplay4"></div>
-                        <p id="temp4"></p>
-                        <img id="iconDisplay4"></img>
-                        <p id="field4"></p>
-                        <p id="humid4"></p>
-                    </div>
+                        <div type="text" class="btn btn-primary btn-lg"
+                            style="width: 125px; height:170px;  padding-left :10px; margin-right: 20px;">
+                            <div id="dateDisplay3"></div>
+                            <p id="temp3"></p>
+                            <img id="iconDisplay3"></img>
+                            <p id="field3"></p>
+                            <p id="humid3"></p>
+                        </div>
 
-                    <div type="text" class="btn btn-primary btn-lg"
-                        style="width: 125px; height:170px;  padding-left :10px; margin-right: 0px;">
-                        <div id="dateDisplay5"></div>
-                        <p id="temp5"></p>
-                        <img id="iconDisplay5"></img>
-                        <p id="field5"></p>
-                        <p id="humid5"></p>
+                        <div type="text" class="btn btn-primary btn-lg"
+                            style="width: 130px; height:170px;  padding-left :10px; margin-right: 20px;">
+                            <div id="dateDisplay4"></div>
+                            <p id="temp4"></p>
+                            <img id="iconDisplay4"></img>
+                            <p id="field4"></p>
+                            <p id="humid4"></p>
+                        </div>
+
+                        <div type="text" class="btn btn-primary btn-lg"
+                            style="width: 125px; height:170px;  padding-left :10px; margin-right: 0px;">
+                            <div id="dateDisplay5"></div>
+                            <p id="temp5"></p>
+                            <img id="iconDisplay5"></img>
+                            <p id="field5"></p>
+                            <p id="humid5"></p>
+                        </div>
                     </div>
-                </div>
             </div>
         </div>
-       </div>
+    </div>
     </div>
 
-  <script>
-
+    <script>
         var searchFor = document.querySelector("#Searchbtn")
         searchFor.addEventListener("click", submitForm)
-        
     </script>
-   
+
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  
+
 </body>
 
 </html>

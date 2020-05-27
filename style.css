@@ -1,36 +1,40 @@
-
-h1 {
-text-align: center; 
-color: white;
-}
-
 .container {
   background-image: url('IMAG0064_light.jpg');
   padding-bottom: 10px;
 }
 
-#field1, #field2, #field3, #field4, #field5, #humid1, #humid2, #humid3, #humid4, #humid5{
 
-font-size: 75%;
-text-align: center;
+h1 {
+  font-family: 'Coustard', serif;
+}
+
+#field1,
+#field2,
+#field3,
+#field4,
+#field5,
+#humid1,
+#humid2,
+#humid3,
+#humid4,
+#humid5 {
+
+  font-size: 75%;
+  text-align: center;
 
 }
 
 tr {
 
- background-color: white;
- 
+  background-color: white;
+
 }
 
-tr { 
- background-color: rgb(240, 255, 254)
+tr {
+  background-color: rgb(240, 255, 254)
 }
 
 .forecastCont {
   margin-bottom: 30px;
- 
+
 }
-
-
- 
-  

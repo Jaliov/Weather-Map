@@ -1,56 +1,56 @@
 var cities = ['London'];
 var cValue;
 
+city === '';
+
+var api = 'https://api.openweathermap.org/data/2.5/weather?q=';
+var api_key = '&appid=585cb6280f44e153d597d105c67d1278&units=imperial';
+var api_key1 = '585cb6280f44e153d597d105c67d1278';
+var api_forecast = 'https://api.openweathermap.org/data/2.5/forecast?q=';
+var api_uvi = 'https://api.openweathermap.org/data/2.5/uvi?';
+var api_lat = 'lat=';
+var api_lon = '&lon=';
+
+var icon;
+var icon1;
+var icon2;
+var icon3;
+var icon4;
+var icon5;
+
+var hu1;
+var hu2;
+var hu3;
+var hu4;
+var hu5;
+
+var icon_img;
+var icon1_img;
+var icon2_img;
+var icon3_img;
+var icon4_img;
+var icon5_img;
+
+var tempStorage;
+var forecastStorage1;
+var humidStorage;
+var windspd;
+var windspdStorage;
+
+var tempStorageArr = [];
+var city;
+var humid;
+var tRow;
+var tBody;
+var reSubmit;
+var tempNum;
+var temper;
+var weatherTd;
+var tTitle;
+var coordLat;
+var coordLong;
+
 function submitForm(city) {
-  city === '';
-
-  var api = 'https://api.openweathermap.org/data/2.5/weather?q=';
-  var api_key = '&appid=585cb6280f44e153d597d105c67d1278&units=imperial';
-  var api_key1 = '585cb6280f44e153d597d105c67d1278';
-  var api_forecast = 'https://api.openweathermap.org/data/2.5/forecast?q=';
-  var api_uvi = 'https://api.openweathermap.org/data/2.5/uvi?';
-  var api_lat = 'lat=';
-  var api_lon = '&lon=';
-
-  var icon;
-  var icon1;
-  var icon2;
-  var icon3;
-  var icon4;
-  var icon5;
-
-  var hu1;
-  var hu2;
-  var hu3;
-  var hu4;
-  var hu5;
-
-  var icon_img;
-  var icon1_img;
-  var icon2_img;
-  var icon3_img;
-  var icon4_img;
-  var icon5_img;
-
-  var tempStorage;
-  var forecastStorage1;
-  var humidStorage;
-  var windspd;
-  var windspdStorage;
-
-  var tempStorageArr = [];
-  var city;
-  var humid;
-  var tRow;
-  var tBody;
-  var reSubmit;
-  var tempNum;
-  var temper;
-  var weatherTd;
-  var tTitle;
-  var coordLat;
-  var coordLong;
-
   city = document.getElementById('searchCity').value;
 
   cities.push(city);
@@ -146,10 +146,10 @@ function submitForm(city) {
       icon == '09d'
     ) {
       alert('rainy');
-      Object.assign(document.querySelector('.container').style, {
+      Object.assign(skyType.style, {
         backgroundImage: "url('Rain.jpg')",
       });
-      document.getElementById('wrapper').style.color = 'white';
+      fontColor.style.color = 'white';
     }
 
     if (typeof Storage !== 'undefined') {
@@ -277,6 +277,10 @@ function submitForm(city) {
 
       //Day 5
       document.getElementById('dateDisplay5').innerHTML = nextDayTime5;
+
+      var cityRld = document.querySelector('#btnContent');
+
+      console.log('cityRld' + cityRld.textContent);
     });
   });
 }
