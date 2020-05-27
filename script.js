@@ -110,33 +110,48 @@ function submitForm(city) {
     tRow.append(city);
     tBody.append(tRow);
 
+    console.log('icon' + icon);
+
+    let skyType = document.querySelector('.container');
+    let fontColor = document.getElementById('wrapper');
+
     if (
-      icon_img == 'https://openweathermap.org/img/w/04d.png' ||
-      icon_img == 'https://openweathermap.org/img/w/04n.png'
+      icon == '04d' ||
+      icon == '04n' ||
+      icon == '03d' ||
+      icon == '03n' ||
+      icon == '02d' ||
+      icon == '02n'
     ) {
-      Object.assign(document.querySelector('.container').style, {
+      alert('cloudy');
+      Object.assign(skyType.style, {
         backgroundImage: "url('cloudy.jpg')",
       });
-      document.getElementById('wrapper').style.color = 'black';
+      fontColor.style.color = 'black';
     } else if (
-      icon_img == 'https://openweathermap.org/img/w/01d.png' ||
-      icon_img == 'https://openweathermap.org/img/w/01n.png'
+      icon == '01d' ||
+      icon == '01n' ||
+      icon == '02d' ||
+      icon == '02n'
     ) {
-      Object.assign(document.querySelector('.container').style, {
+      alert('clear');
+      Object.assign(skyType.style, {
         backgroundImage: "url('IMAG0064_light.jpg')",
       });
-      document.getElementById('wrapper').style.color = 'black';
+      fontColor.style.color = 'black';
     } else if (
-      icon_img == 'https://openweathermap.org/img/w/10d.png' ||
-      'https://openweathermap.org/img/w/10n.png'
+      icon == '10d' ||
+      icon == '10n' ||
+      icon == '09n' ||
+      icon == '09d'
     ) {
+      alert('rainy');
       Object.assign(document.querySelector('.container').style, {
         backgroundImage: "url('Rain.jpg')",
       });
       document.getElementById('wrapper').style.color = 'white';
-    } else {
-      backgroundImage: "url('IMAG0064_light.jpg')";
     }
+
     if (typeof Storage !== 'undefined') {
       localStorage.setItem('cityArr', cities);
       localStorage.setItem('city', city);
@@ -263,14 +278,5 @@ function submitForm(city) {
       //Day 5
       document.getElementById('dateDisplay5').innerHTML = nextDayTime5;
     });
-
-    // function checkCity(cityLabel) {
-    //     return cityLabel === cityReload
-    // }
-
-    // cities.filter(checkCity)
-
-    // var cityReload = document.querySelector("#content");
-    // cityReload.addEventListener('click', submitForm)
   });
 }
