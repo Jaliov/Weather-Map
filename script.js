@@ -110,18 +110,32 @@ function submitForm(city) {
     tRow.append(city);
     tBody.append(tRow);
 
-    if (icon_img == 'https://openweathermap.org/img/w/04d.png') {
-      alert('cloudy');
+    if (
+      icon_img == 'https://openweathermap.org/img/w/04d.png' ||
+      icon_img == 'https://openweathermap.org/img/w/04n.png'
+    ) {
       Object.assign(document.querySelector('.container').style, {
-        backgroundImage: "url('IMAG0064_grey.jpg')",
+        backgroundImage: "url('cloudy.jpg')",
       });
-      document.getElementById('wrapper').style.color = 'white';
-    } else if (icon_img !== 'https://openweathermap.org/img/w/04d.png') {
-      alert('sunny');
+      document.getElementById('wrapper').style.color = 'black';
+    } else if (
+      icon_img == 'https://openweathermap.org/img/w/01d.png' ||
+      icon_img == 'https://openweathermap.org/img/w/01n.png'
+    ) {
       Object.assign(document.querySelector('.container').style, {
         backgroundImage: "url('IMAG0064_light.jpg')",
       });
       document.getElementById('wrapper').style.color = 'black';
+    } else if (
+      icon_img == 'https://openweathermap.org/img/w/10d.png' ||
+      'https://openweathermap.org/img/w/10n.png'
+    ) {
+      Object.assign(document.querySelector('.container').style, {
+        backgroundImage: "url('Rain.jpg')",
+      });
+      document.getElementById('wrapper').style.color = 'white';
+    } else {
+      backgroundImage: "url('IMAG0064_light.jpg')";
     }
     if (typeof Storage !== 'undefined') {
       localStorage.setItem('cityArr', cities);
