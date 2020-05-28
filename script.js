@@ -115,41 +115,43 @@ function submitForm(city) {
     let skyType = document.querySelector('.container');
     let fontColor = document.getElementById('wrapper');
 
-    if (
-      icon == '04d' ||
-      icon == '04n' ||
-      icon == '03d' ||
-      icon == '03n' ||
-      icon == '02d' ||
-      icon == '02n'
-    ) {
-      alert('cloudy');
-      Object.assign(skyType.style, {
-        backgroundImage: "url('cloudy.jpg')",
-      });
-      fontColor.style.color = 'black';
-    } else if (
-      icon == '01d' ||
-      icon == '01n' ||
-      icon == '02d' ||
-      icon == '02n'
-    ) {
-      alert('clear');
-      Object.assign(skyType.style, {
-        backgroundImage: "url('IMAG0064_light.jpg')",
-      });
-      fontColor.style.color = 'black';
-    } else if (
-      icon == '10d' ||
-      icon == '10n' ||
-      icon == '09n' ||
-      icon == '09d'
-    ) {
-      alert('rainy');
-      Object.assign(skyType.style, {
-        backgroundImage: "url('Rain.jpg')",
-      });
-      fontColor.style.color = 'white';
+    switch (icon) {
+      case '01d':
+      case '01n':
+      case '02d':
+      case '02n':
+        alert('clear');
+        Object.assign(skyType.style, {
+          backgroundImage: "url('sunny.jpg')",
+        });
+        fontColor.style.color = 'black';
+        break;
+      case '10d':
+      case '10n':
+      case '9d':
+      case '9n':
+        alert('rainy');
+        Object.assign(skyType.style, {
+          backgroundImage: "url('rainy.jpg')",
+        });
+        fontColor.style.color = 'white';
+        break;
+      case '04d':
+      case '04n':
+      case '03d':
+      case '03n':
+      case '02d':
+      case '02n':
+        alert('cloudy');
+        Object.assign(skyType.style, {
+          backgroundImage: "url('cloudy.jpg')",
+        });
+        fontColor.style.color = 'black';
+        break;
+      default:
+        Object.assign(skyType.style, {
+          backgroundImage: "url('background.jpg')",
+        });
     }
 
     if (typeof Storage !== 'undefined') {
