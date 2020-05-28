@@ -82,8 +82,9 @@ function submitForm(city) {
   }).then(function (response) {
     tBody = $('tbody');
     tRow = $(
-      "<div id = 'btnContent' class = 'btn btn-light btn-lg cityValue' label id = 'content'>"
+      "<div id = 'btnContent' class = 'btn btn-light btn-lg Searchbtn' label id = 'content'>"
     );
+
     var btnResult = [' '];
     var cityRld = document.querySelector('.city').value;
 
@@ -109,6 +110,8 @@ function submitForm(city) {
 
     tRow.append(city);
     tBody.append(tRow);
+
+    document.getElementById('searchCity').value = '';
 
     console.log('icon' + icon);
 
