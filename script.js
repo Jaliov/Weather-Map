@@ -153,7 +153,7 @@ function submitForm(city) {
         break;
       default:
         Object.assign(skyType.style, {
-          backgroundImage: "url('Background.jpg')",
+          backgroundImage: "url('defltBckgrnd.jpg')",
         });
     }
 
