@@ -83,7 +83,7 @@ function submitForm(city) {
   }).then(function (response) {
     tBody = $('tbody');
     tRow = $(
-      "<div class = 'searchbtn'><button id = 'btnContent' class = 'btn btn-light btn-lg' label id = 'content' onclick= 'reSubmit()'></button></div>"
+      "<div class = 'alert alert-primary searchbtn' ><button id = 'btnContent' class = 'btn btn-light'  onclick= 'reSubmit()'></button></div>"
     );
 
     tTitle = $('<h3>');

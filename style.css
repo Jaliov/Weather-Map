@@ -18,16 +18,12 @@ h1 {
 #humid3,
 #humid4,
 #humid5 {
-
   font-size: 75%;
   text-align: center;
-
 }
 
 tr {
-
   background-color: white;
-
 }
 
 tr {
@@ -36,5 +32,12 @@ tr {
 
 .forecastCont {
   margin-bottom: 30px;
+}
 
+#btnContent {
+  margin-right: 10px;
+}
+
+.searchbtn {
+  width: 200px;
 }
