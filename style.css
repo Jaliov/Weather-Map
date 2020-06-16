@@ -39,5 +39,10 @@ tr {
 }
 
 .searchbtn {
-  width: 200px;
+  width: 190px;
+  margin-bottom: -10px;
+}
+
+#searchCity {
+  margin-bottom: 10px;
 }
