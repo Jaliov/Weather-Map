@@ -1,8 +1,13 @@
+body {
+  background-image: url('IMAG0064_light.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .container {
   background-image: url('defltBckgrnd.jpg');
   padding-bottom: 10px;
 }
-
 
 h1 {
   font-family: 'Coustard', serif;
