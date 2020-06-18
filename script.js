@@ -83,7 +83,7 @@ function submitForm(city) {
   }).then(function (response) {
     tBody = $('tbody');
     tRow = $(
-      "<div class='alert alert-info searchbtn' style='margin-bottom:0px;'><button type='button' id ='btnContent' class='btn btn-light btn-lg'  onclick= 'reSubmit()'></button></div>"
+      "<div class='alert alert-info searchbtn' style='margin-bottom:0px;'><button type='button' id ='btnContent' class='btn btn-light' onclick= 'reSubmit()'></button></div>"
     );
 
     tTitle = $('<h3>');
@@ -118,6 +118,7 @@ function submitForm(city) {
 
     let skyType = document.querySelector('.container');
     let fontColor = document.getElementById('wrapper');
+    let forecastColor = document.getElementById('forecast');
 
     switch (icon) {
       case '01d':
@@ -150,7 +151,7 @@ function submitForm(city) {
         Object.assign(skyType.style, {
           backgroundImage: "url('cloudy.jpg')",
         });
-        fontColor.style.color = 'black';
+        forecastColor.style.color = 'white';
         break;
       default:
         Object.assign(skyType.style, {
@@ -290,8 +291,8 @@ function submitForm(city) {
 function reSubmit(buttonContent) {
   $('.searchbtn').click(function (e) {
     e.preventDefault();
+
     var buttonContent = $(this).text();
-    // $('#displayWeather').text(buttonContent);
 
     var currentTime = moment().format('MM-DD-YYYY');
     var nextDayTime1 = moment(currentTime, 'MM-DD-YYYY')
@@ -343,6 +344,7 @@ function reSubmit(buttonContent) {
 
       let skyType = document.querySelector('.container');
       let fontColor = document.getElementById('wrapper');
+      let forecastColor = document.getElementById('forecast');
 
       switch (icon) {
         case '01d':
@@ -375,7 +377,7 @@ function reSubmit(buttonContent) {
           Object.assign(skyType.style, {
             backgroundImage: "url('cloudy.jpg')",
           });
-          fontColor.style.color = 'black';
+          forecastColor.style.color = 'white';
           break;
         default:
           Object.assign(skyType.style, {
