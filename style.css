@@ -4,6 +4,15 @@ body {
   background-size: cover;
 }
 
+@keyframes zoomBackground {
+  0% { background-size: 100% 100%; }
+  100% { background-size: 110% 110%; }
+}
+.container {
+  animation: zoomBackground 5s ease-in-out infinite alternate;
+}
+
+
 .container {
   background-image: url('defltBckgrnd.jpg');
   padding-bottom: 10px;
@@ -50,4 +59,11 @@ tr {
 
 #searchCity {
   margin-bottom: 10px;
+}
+
+.btn-primary{
+  box-shadow: 6px 6px 8px rgb(51, 63, 71, .5);
+  transition: all 0.1s ease;
+  position: relative;
+  top: 0;
 }
