@@ -137,7 +137,7 @@ function submitForm(city) {
       case '9n':
         alert('rainy');
         Object.assign(skyType.style, {
-          backgroundImage: "url('rainy.jpg')",
+          backgroundImage: "url('154eae88976cbe461d937d08c12a5854.gif')",
         });
         fontColor.style.color = 'white';
         break;
