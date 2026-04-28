@@ -113,6 +113,12 @@ function submitForm(city) {
     tBody.append(tRow);
 
     document.getElementById('searchCity').value = '';
+    const rld = document.getElementById("reload");
+    
+rld.addEventListener("click", () => {
+  location.reload();
+});
+
 
     // console.log('icon' + icon);
 

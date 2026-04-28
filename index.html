@@ -18,11 +18,8 @@
     <script src="script.js"></script>
 
     <title>Weather Map</title>
-
 </head>
-
 <body>
-
     <div class="container text-dark">
         <div class="row">
             <div class="bg-dark col col-lg-12" style="height:100px;padding-top: 20px">
@@ -35,10 +32,13 @@
 
             <div class="jumbotron col col-lg-4">
                 <h4 class="text-dark">Search for a City</h4>
-
-                <input id="searchCity" type="text" placeholder="Search" class="cityInput">
+            <div class="cityInput">
+                <input id="searchCity" type="text" placeholder="Search" >
                 <button class="btn btn-primary fa fa-search Searchbtn"></button>
-
+                <button type="button" class="btn btn-primary" id = "reload">
+  <i class="bi bi-arrow-clockwise"></i> Reload
+</button>
+</div>
                 <table class="table">
 
                     <tbody id="showIt"></tbody>
@@ -64,7 +64,7 @@
                     <h3 id="forecast">5 Day Forecast</h3>
                     <div class="forecastCont">
                         <div type="text" class="btn btn-primary btn-lg"
-                            style="width: 125px; height:170px; padding-left :10px; margin-right:20px">
+                            style="width: 125px; height:170px; padding-left: 10px; margin-right:20px;margin-bottom:10px;">
                             <div id="dateDisplay1"></div>
                             <p id="temp1"></p>
                             <img id="iconDisplay1"></img>
@@ -73,7 +73,7 @@
                         </div>
 
                         <div type="text" class="btn btn-primary btn-lg"
-                            style="width: 125px; height:170px; padding-left :10px; margin-right: 20px;">
+                            style="width: 125px; height:170px; padding-left :10px; margin-right:20px;margin-bottom:10px;">
                             <div id="dateDisplay2"></div>
                             <p id="temp2"></p>
                             <img id="iconDisplay2"></img>
@@ -82,7 +82,7 @@
                         </div>
 
                         <div type="text" class="btn btn-primary btn-lg"
-                            style="width: 125px; height:170px;  padding-left :10px; margin-right: 20px;">
+                            style="width: 125px; height:170px;  padding-left :10px; margin-right:20px;margin-bottom:10px;">
                             <div id="dateDisplay3"></div>
                             <p id="temp3"></p>
                             <img id="iconDisplay3"></img>
@@ -91,7 +91,7 @@
                         </div>
 
                         <div type="text" class="btn btn-primary btn-lg"
-                            style="width: 125px; height:170px;  padding-left :10px; margin-right: 20px;">
+                            style="width: 125px; height:170px;  padding-left :10px; margin-right:20px;margin-bottom:10px;">
                             <div id="dateDisplay4"></div>
                             <p id="temp4"></p>
                             <img id="iconDisplay4"></img>
@@ -100,7 +100,7 @@
                         </div>
 
                         <div type="text" class="btn btn-primary btn-lg"
-                            style="width: 125px; height:170px;  padding-left :10px; margin-right: 0px;">
+                            style="width: 125px; height:170px;  padding-left :10px; margin-right: 0px;margin-bottom:10px;">
                             <div id="dateDisplay5"></div>
                             <p id="temp5"></p>
                             <img id="iconDisplay5"></img>
